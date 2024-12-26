@@ -90,14 +90,15 @@ http://localhost:3010
 **7. Создать новый терминал и найти логи**
 ```
 $ minikube kubectl -- get pods
+NAME                                  READY   STATUS    RESTARTS        AGE
+deployment-react-76cfb6b8b6-g4jjs     1/1     Running   0               7m
+deployment-react-76cfb6b8b6-zrzcn     1/1     Running   0               7m
+frontend-deployment-58cbffc88-8rrh6   1/1     Running   2 (7m50s ago)   70m
+frontend-deployment-58cbffc88-wcww4   1/1     Running   2 (7m50s ago)   70m
+vault                                 1/1     Running   3 (7m50s ago)   5d5h
 
-NAME                                READY   STATUS    RESTARTS      AGE
-deployment-react-5d7b589df8-2w8gr   1/1     Running   0             19m
-deployment-react-5d7b589df8-dcv9x   1/1     Running   0             19m
-vault                               1/1     Running   1 (38m ago)   154m
 
-
-$ minikube kubectl -- logs deployment-react-5d7b589df8-2w8gr
+$ minikube kubectl -- logs deployment-react-76cfb6b8b6-g4jjs
 Builing frontend
 Browserslist: caniuse-lite is outdated. Please run:
   npx update-browserslist-db@latest
@@ -108,7 +109,7 @@ Browserslist: caniuse-lite is outdated. Please run:
 build finished
 Server started on port 3000
 
-$ minikube kubectl -- logs deployment-react-5d7b589df8-dcv9x
+$ minikube kubectl -- logs deployment-react-76cfb6b8b6-zrzcn
 Builing frontend
 Browserslist: caniuse-lite is outdated. Please run:
   npx update-browserslist-db@latest
